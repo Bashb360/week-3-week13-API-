@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>week 3</title>
+    <style>
+    .table {
+            border-collapse: collapse;
+            border: 10px solid black;
+            padding: 10px;
+            text-align: center;
+          }
+          
+          .th,
+          td {
+            border: 5px solid black;
+            padding: 5px;
+            text-align: center;
+          }
+          
+          .getBack {
+            background-color: green;
+          }
+          
+          .submit-yellow {
+            background-color: yellow;
+          }
+          </style>
+        </head>
+  <body>
+    <div class="table">
+      <label for="rows">ROWS:</label>
+      <input type="number" id="rows" name="rows" value="3" />
+      <label for="columns">COLUMNS:</label>
+      <input type="number" id="columns" name="columns" value="3" />
+      <button id="getButton" class="getBack">Generate Table</button>
+    </div>
+
+    <script>
+        const getButton = document.getElementById("getButton");
+      let x = 7;
+      let y = 3;
+
+function createTable() {
+  let rows = document.getElementById("rows").value;
+  let columns = document.getElementById("columns").value;
+  let table = document.querySelector("table");
+  table.innerHTML = ""; // Clear previous table data
+  for (let i = 0; i < rows; i++) {
+    let row = table.insertRow(i);
+    for (let j = 0; j < columns; j++) {
+      let cell = row.insertCell(j);
+      let number = (i + 1) * (j + 1); // Multiply numbers
+      cell.innerHTML = number;
+    }
+  }
+}
+
+getButton.addEventListener("click", newColor);
+
+function newColor() {
+  getButton.classList.remove("getBack");
+  getButton.classList.add("submit-yellow");
+  console.log("Welcome Mubashar");
+}
+
+function calaculation() {
+  console.log(x + y);
+}
+
+calaculation();
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
